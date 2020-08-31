@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button id="button">Click Me!</button> -->
+    <script>
+      function adder(x, y, callback) {
+        let answer = x + y;
+        if (callback) {
+          return callback(answer);
+        }
+        return answer;
+      }
+
+      function shoutSomething(input) {
+        console.log(`${input}!!!!`);
+      }
+      adder(1, 2, shoutSomething);
+      // ____________________________________________________________
+      // function wait(ms) {
+      //   let start = Date.now();
+      //   let now = start;
+
+      //   while (now - start < ms) {
+      //     now = Date.now();
+      //   }
+      // }
+      // document.getElementById("button").addEventListener("click", () => {
+      //   wait(5000);
+      //   alert("Ran!");
+      // });
+      // ____________________________________________________________________
+
+      [1, 2, 3].forEach((v, i) => {
+        console.log(v);
+      });
+    </script>
+  </body>
+</html>

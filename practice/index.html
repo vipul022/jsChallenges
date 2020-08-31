@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function addition(x, y) {
+        return x + y;
+      }
+
+      // let multiplication = (a, b) => a * b;
+      function multiplication(a, b) {
+        return a * b;
+      }
+      let string =
+        "Dont blame me, I                voted for Kudos                 .";
+      // string.slice(15, 22);
+
+      function myFunction() {
+        let str = string.replace("Kudos", "Kang");
+        // return str.toUpperCase();
+        return str.toLowerCase();
+      }
+      let spaces = "          Spaces         ";
+      spaces = spaces.trim();
+
+      let hello = "HELLO WORLD";
+      // hello = hello.charAt(6);
+      hello = hello.split("");
+      hello = hello.join(" ");
+
+      function toVaporwave(string) {
+        string = string.split("");
+        string = string.join(" ");
+        return string;
+      }
+
+      // Array Methods
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      // fruits.join(", "); Type this in console to get the solution
+
+      const numbers = [1, 4, 5, 7, 8];
+      // Challenge
+      // Create a new variable called user, set the value to: tom
+      // Write an if statement: if the user's name is tom, say 'Hello Tom'
+      // Add an else condition: say 'Hello someone other than Tom'
+      // Add a new variable called age, set the value to: 18
+      // If the user is 18, say 'welcome to the casino!'
+      // Research 'prompt'. Use it in your code to ask the user for their age.
+      // If the user is less than 18 years old, use the alert method to deny entry.
+      let user = "Tom";
+      if (user === "Tom") {
+        console.log(`Hello ${user}`);
+      } else {
+        console.log("Hello someone other than Tom");
+      }
+      // let p = prompt("What is your name?");
+
+      // let age = 18;
+      // // userAge = prompt("What is your age?");
+      // if (userAge >= age) {
+      //   console.log("welcome to the casino!");
+      // } else {
+      //   alert("Entry denied!");
+      // }
+
+      // Beast Mode
+      // Assign an empty array to a students variable.
+      // Use the push method to add a student called Sarah
+      // Use prompt to ask the user for their name, add it to the array.
+      // Use a loop to ask the user for 3 names, add them all to the array.
+      // Loop through the array and use the alert method to read each user back to the user.
+
+      let students = [];
+      students.push("Sarah");
+      console.log(students);
+      let i;
+      for (i = 0; i < 3; i++) {
+        let studentName = prompt("What is your name?");
+        students.push(studentName);
+      }
+      console.log(students);
+
+      let e;
+      for (e = 0; e < students.length - 1; e++) {
+        alert(students[e]);
+      }
+    </script>
+  </body>
+</html>

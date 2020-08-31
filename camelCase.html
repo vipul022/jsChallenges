@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- We used snake_case a lot in Ruby. But now we're living in a JavaScript world where the convention is to use camelCase. Write a function that converts any snake or kebab case string (aka dash/underscore delimited words) and converts it to camel case. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+
+e.g. 
+
+toCamelCase("foo_bar") // returns "fooBar" 
+
+toCamelCase("Hello-there") // returns "HelloThere"
+
+to CamelCase("") // returns ""  -->
+    <script>
+      let toCamelCase = (s) => {
+        return s.replace(/([-_][a-z])/gi, ($1) => {
+          return $1.toUpperCase().replace("-", "").replace("_", "");
+        });
+      };
+    </script>
+  </body>
+</html>

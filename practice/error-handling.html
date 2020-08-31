@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class vipulError extends Error {
+        constructor(...params) {
+          super(...params);
+          this.name = "VipulError";
+        }
+      }
+
+      try {
+        let a = 8;
+        if (a > 0) {
+          // created new object from vipulError class defined above
+          throw new vipulError("True error!");
+        }
+        throw new Error("False error!");
+      } catch (error) {
+        switch (error.name) {
+          case "VipulError":
+            console.log(error.message);
+            break;
+          case "Error":
+            throw error;
+            // console.log(error.message);
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

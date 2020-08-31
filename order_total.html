@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Write a function ‘orderTotal’ that takes two arguments; an array of order objects, and an ‘options’ object, and returns a total cost of the order”
+
+      // Orders will have the following structure - {name: <string>, qty: <number>, price:<number>} . Price will be whole dollar values.
+
+      // The ‘options’ object will determine sales tax (as a decimal) and shipping cost. e.g {salesTax: 0.2, shipping: 20}. If options is not provided a default sales tax of 10% and shipping cost of $15 will apply. Finally, all orders over $200 will receive free shipping.
+
+      //       // e.g if an order looks like this
+      // const order = [
+      //     {name: "jar of coffee", qty:2, price: 15},
+      //     {name:" packet of teabags", qty: 3, price: 8}
+      //     ]
+      // orderTotal(order) will calculate the price of coffee (2  x 15) + the price of teabags ( 3 x 8). Then add default sales tax and shipping  - because options wasn't specified - to the subtotal (54) for a grand total of 74.4 .
+
+      // function orderTotal(order, options, salesTax = 10, shipping = 15) {
+      //   let total = 0;
+
+      //   for (let i of order) {
+      //     total += i.qty * i.price;
+      //   }
+      //   if (total >= 200) {
+      //     shipping = 0;
+      //   }
+      //   return (total += (salesTax / 100) * total + shipping);
+      // }
+
+      // const order = [
+      //   { name: "jar of coffee", qty: 2, price: 15 },
+      //   { name: " packet of teabags", qty: 3, price: 8 },
+      // ];
+      // // const options = { salesTax: 0.2, shipping: 20 };
+      // console.log(orderTotal(order));
+
+      const drinkShop = {
+        title: "My Fancy Drink Shop",
+        products: [
+          {
+            id: 1,
+            title: "Coca Cola",
+            price: 4.32,
+          },
+          {
+            id: 2,
+            title: "Fanta",
+            price: 4.22,
+          },
+          {
+            id: 3,
+            title: "Lift",
+            price: 4.11,
+          },
+        ],
+        customers: {
+          "jane@doe.com": {
+            firstName: "John",
+            lastName: "Doe",
+            address: {
+              streetNumber: 12,
+              street: "Main St",
+              city: "Brisbane",
+              postcode: 4000,
+            },
+            orders: [
+              {
+                id: 61721,
+                status: "delivered",
+                items: [
+                  {
+                    productId: 1,
+                    qty: 2,
+                  },
+                  {
+                    productId: 3,
+                    qty: 1,
+                  },
+                  {
+                    productId: 2,
+                    qty: 3,
+                  },
+                ],
+                notes: "Please leave on doorstep",
+              },
+              {
+                id: 82721,
+                status: "delivered",
+                items: [
+                  {
+                    productId: 4,
+                    qty: 100,
+                  },
+                ],
+                notes: "Really enjoying coke ATM",
+              },
+            ],
+          },
+        },
+      };
+      // Return the total cost of an order.
+      let findOrder = drinkShop["customers"]["jane@doe.com"]["orders"];
+      let findProducts = drinkShop["products"];
+      let totalCost = 0;
+      findOrder.forEach((order) => {
+        // if (order.id === orderID) {
+
+        order.items.forEach((item) => {
+          findProducts.forEach((product) => {
+            totalCost +=
+              product.id === item.productId ? product.price * item.qty : false;
+          });
+        });
+      });
+      console.log("totalCost=> ", totalCost);
+    </script>
+  </body>
+</html>

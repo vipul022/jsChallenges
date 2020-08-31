@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Have the function clamp(value, min, max) take the value parameter being passed and:
+
+Return max if value is greater than max.
+
+Return min if value is less than min.
+
+Return value if neither of these conditions are met.
+
+For example:
+
+clamp(5, 1, 10) Should return 5, value is less than max and greater than min.
+clamp(5, 1, 4)   Should return 4, value is greater than max.
+clamp(5, 6, 10) Should return 6, value is less then min. -->
+
+    <script>
+      // function clamp(value, min, max) {
+      //   if (value > max) {
+      //     return max;
+      //   } else if (value < min) {
+      //     return min;
+      //   }
+      //   return value;
+      // }
+
+      // console.log(clamp(5, 1, 10));
+
+      // Assign a new empty object to a variable called person
+
+      // On the next line, add one key 'age' and set its value to your age
+
+      // On the next line, add one key 'current location' and set its value to your current location
+
+      // Use console.log to display the age and current location on screen
+
+      // Use code to add an array of hobbies to your me object
+
+      // Iterate through person.hobbies and log each hobby to the screen
+
+      // Add another item to the end of the hobbies array
+
+      // Delete the first item in the hobbies array
+
+      let person = {};
+      person.age = 30;
+      person.currentLocation = "Melbourne";
+      console.log(person.age);
+      console.log(person.currentLocation);
+      person.hobbies = ["walks", "tennis balls", "bamboozling"];
+      for (i = 0; i < person.hobbies.length; i++) {
+        console.log(person.hobbies[i]);
+      }
+      person.hobbies.push("Dance");
+      person.hobbies.shift();
+      person.mother = {};
+      person.mother.name = "Sarah";
+      person.mother.age = 60;
+      person.mother.location = "Melbourne";
+      person.print_details = function () {
+        console.log(`My hobbies are ${person.hobbies}.`);
+      };
+      // person.print_details();
+      person.print_details;
+      // Add a mother key, set its value to an empty object
+
+      // Add name, age and location keys to the mother object
+
+      // Add a print_details function to the person object.
+
+      // Call the function to log some details about yourself. I.e. person.print_details() should work
+
+      // Note the difference between calling person.print_details and person.print_details()
+    </script>
+  </body>
+</html>

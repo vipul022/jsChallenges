@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Using ES6 class syntax create a class named Dog . Implement the following features, remember to run the tests to ensure each part works, and that a previous step has not been broken.
+
+      // Create the Dog class, each dog should have a name and location (strings).
+      // Add a speak method that returns Woof! My name is {name}
+
+      // Add a walk method that accepts two arguments, location (string) and distance (integer). Save this data in the dog class.
+
+      class Dog {
+        constructor(name, location) {
+          this.name = name;
+          this.location = location;
+          this.walks = [];
+        }
+        speak() {
+          return `Woof! My name is ${this.name}.`;
+        }
+
+        walk(location, distance) {
+          this.walks.push(new Walk(location, distance));
+        }
+
+        allWalks() {
+          return this.walks;
+        }
+
+        totalDistance() {
+          return this.walks.reduce((total, current) => {
+            return total + current.distance;
+          }, 0);
+        }
+      }
+
+      class Walk {
+        constructor(location, distance) {
+          this.location = location;
+          this.distance = distance;
+          this.timestamp = Date.now();
+        }
+      }
+      let tommy = new Dog("Tommy", "Melbourne");
+      tommy.walk("Melbourne", 10);
+      tommy.walk("Melbourne", 10);
+      let jill = new Dog("Jill", "Sydney");
+      jill.walk("Sydney", 12);
+      // Add a allWalks method that returns an array all of the dog's walks.
+
+      // Add a totalDistance method that return the total distance of all walks.
+
+      // Create a Walk class with properties location and distance.
+
+      // When the walk method is called on dog, instantiate this class to make a new walk.
+
+      // Add a timestamp to Walk that automatically adds the current time when it is instantiated.
+
+      // The walk.js file and dog.js file have been provided for you make sure you uncomment the lines when appropriate.
+    </script>
+  </body>
+</html>

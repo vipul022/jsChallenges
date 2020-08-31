@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Shape {
+        constructor(height, width) {
+          this.height = height;
+          this.width = width;
+        }
+      }
+      Shape.prototype.area = function () {
+        return this.height * this.width;
+      };
+
+      Shape.prototype.colour = "red";
+
+      class Square extends Shape {
+        constructor(height, width) {
+          super(height, width);
+          this.partyHat = true;
+        }
+        isSquare() {
+          if (this.height !== this.width) {
+            return false;
+          }
+          return true;
+        }
+      }
+
+      let sq1 = new Square(10, 20);
+      let sq2 = new Square(10, 10);
+    </script>
+  </body>
+</html>
