@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- This challenge is just a "sanity check", to make sure that you can use standard function syntax in your own custom functions.
+
+Create a function named "diceRoller" that can return a random number between 1 and a specified maximum.
+
+If you think along the lines of a dice, you don't specify a minimum - just the maximum. A "six-sided dice" or a "twelve-sided dice" or a "twenty-sided dice", not a "one-to-six sided dice".
+
+Your function must take a number as a parameter, and use that number as the maximum when generating a random whole number.  -->
+    <script>
+      // this function generates a random number between 1 and the given number
+      let diceRoller = (number) => Math.floor(Math.random() * number) + 1;
+
+      diceRoller(6);
+    </script>
+  </body>
+</html>

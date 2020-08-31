@@ -118,6 +118,14 @@
         });
       });
       console.log("totalCost=> ", totalCost);
+      // Another solution
+      // totalCost: (email, orderId) => {
+      // const order = drinkShop.customers[email].orders.find(order => order.id === orderId);
+      // const total = order.items.reduce((total, item)=>{
+      // return total+shop.productCost(item.productId)*item.qty
+      // }, 0);
+      // return total;
+      // },
     </script>
   </body>
 </html>
