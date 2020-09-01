@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // You're a developer! The other students are developers! The teachers are developers! We're all developers!
+
+      // This means we have quite a few properties in common. We should probably organize that data. Time to make a class!
+
+      // Complete these steps:
+
+      // Create a class named "Developer"
+
+      // Make sure it has a constructor.
+
+      // The constructor should take three parameters: name, languages, and devType.
+
+      // type of development (eg. "webdev", "gamedev", "serverdev", "dbdev") named "devType"
+
+      // languages (eg. "javascript", "C#", "ruby", "python") named "languages"
+
+      // the developer's name (eg. "Alex") named "name"
+
+      // In its constructor, a developer should have variables to match & store the parameters.
+
+      // The class should have a variable to track how many instances of a Developer have been created
+
+      // Think along the lines of static, get & set keywords to do this.
+
+      // For challenge test purposes, please make sure "Developer.count" returns the current number of instances of the Developer class.
+
+      // "Developer.count()" will not pass the challenge tests -- please make sure it's a variable!
+
+      // The Developer class should contain a function named "greet", that simply logs the developer's name in a nice human-friendly message like "Hello, I'm Alex!".
+
+      // The Developer class should contain a function named "about", that simply logs the developer's languages & development types in a nice human-friendly message. For example: "I'm a gamedev that uses C#!"
+
+      class Developer {
+        constructor(name, languages, devType) {
+          this.name = name;
+          this.languages = languages;
+          this.devType = devType;
+          Developer.count++;
+        }
+      }
+      Developer.prototype.greet = function () {
+        return `Hello, I'am ${this.name}!`;
+      };
+
+      Developer.prototype.about = function () {
+        return `I'm a ${this.devType} that uses ${this.languages}!`;
+      };
+    </script>
+  </body>
+</html>
