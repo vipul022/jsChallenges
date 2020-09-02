@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Complete the function getStationAtIndex() that takes an a number as an argument and returns the train line at that particular index.
+
+      // The function should return the station at the index passed in.
+      // i.e. getStationAtIndex(1) should return Belgraive
+
+      // If the index is not valid.... throw an error and pass it to our custom function to catch it.
+
+      // i.e. getStationAtIndex(22), there is no station at that index so it would normally be undefined but we want our custom error handler to do this.
+
+      // Using the function StationIndexError, pass the error message to this function and have the function return the error if the index is not found.
+
+      // Make the thrown error message return "That index not found"
+      function StationIndexError(message) {
+        this.name = "StationIndexError";
+        //  Your code here to assign the message of the error
+        return message;
+      }
+
+      function getStationAtIndex(index) {
+        const trainLines = [
+          "Alamein",
+          "Belgrave",
+          "Craigieburn",
+          "Cranbourne",
+          "Flemington",
+          "Frankston",
+          "Glen Waverley",
+          "Hurstbridge",
+          "Lilydale",
+          "Mernda",
+          "Pakenham",
+          "Sandringham",
+          "Stony Point",
+          "Sunbury",
+          "Upfield",
+          "Werribee",
+          "Williamstow",
+        ];
+
+        try {
+          if (index < 0 || index > trainLines.length - 1) {
+            throw StationIndexError("That index not found");
+          }
+          console.log(trainLines[index]);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      module.exports = {
+        getStationAtIndex,
+        StationIndexError,
+      };
+    </script>
+  </body>
+</html>
