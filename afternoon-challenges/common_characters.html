@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Write some fun JS code which will return the common characters found in two different strings.
+
+      // Let us some conditions to it.
+
+      // It must return only one copy of each common character.
+
+      // Character case should be ignored (your solution should be case-insensitive).
+
+      // Examples:
+      // commonCharacters("efg", "feg") => "efg"
+      // commonCharacters("We are both dragon energy", "I am God's vessel") => "eaodg"
+      // commonCharacters("Alright alright alright", "") => ""
+      const commonCharacters = (string1, string2) => {
+        let result = [];
+        string1 = string1.toLowerCase();
+        string2 = string2.toLowerCase();
+
+        for (let i in string1) {
+          for (let n in string2) {
+            if (string2[n] === string1[i]) {
+              result.push(string2[n]);
+            }
+          }
+        }
+
+        let unique = [...new Set(result)];
+        // used regex to remove empty spaces, comas and periods from string
+        return (unique = unique.join().replace(/[ ,.]/g, ""));
+      };
+
+      console.log(
+        commonCharacters("We are both dragon energy", "I am God's vessel")
+      );
+    </script>
+  </body>
+</html>
