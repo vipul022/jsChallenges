@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="clock"></p>
+    <script>
+      function displayTime() {
+        // new Date() gives the current date and date.toLocaleTimeString() gives the current time
+        let date = new Date();
+        let time = date.toLocaleTimeString();
+        document.querySelector(".clock").textContent = time;
+      }
+
+      displayTime();
+      // setInterval() take a function and period of time in milliseconds and it returns an identifying value to use later for clearing the interval on line 22
+      const createClock = setInterval(displayTime, 1000);
+
+      // clearInterval(createClock);
+    </script>
+  </body>
+</html>

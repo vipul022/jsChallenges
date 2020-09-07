@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let people = ["tanya", "sue", "john", "garret"];
+      function remove(items, callback) {
+        // your code goes here
+        if (callback) {
+          let people = items.filter((word) => word === item);
+          return people;
+        }
+      }
+      // if(callback){
+      //         return callback(answer)
+      //     }
+      //     return answer
+      // }
+      function removerFunction(item) {
+        item = item.toLowerCase();
+        if (item.charAt(0) === "t") {
+          return item;
+        }
+        return false;
+      }
+      remove(people, removerFunction("tanya"));
+    </script>
+  </body>
+</html>

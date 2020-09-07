@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <button id="button">Get Jokes</button>
+    <script>
+      // This challenge will have you making modifications to that code to do 2 things:
+
+      // Use a defined function for the callback instead of the block (see line 22 in the screenshot)
+
+      // Change out the dadjoke API for a Pokemon API -- we want to grab random Pokemon & store their names in the array!
+
+      // Read the PokeAPI docs for examples of the URLs they use. You can simply interpolate a random number in to URLs like 'pokeapi.co/api/v2/pokemon/1'.
+
+      // You only need to store the name from the data that the PokeAPI gives you. They give you a lot of data. You must be able to focus on just the data that you need.
+
+      // Also, because this challenge requires web requests, it might not work in Ed. They block some API & web request systems. If that happens for you, then you must make some local files on your computer, and (if you're in VS Code) use the Live Server extension to run your HTML files on localhost.
+
+      // We'll revisit this challenge once everyone has more DOM manipulation knowledge, but if you'd like to jump ahead you can try these things:
+
+      // showing the resulting Pokemon team array in HTML instead of the browser console
+
+      // Grabbing the Pokemon's images from the API and showing that in HTML
+      function compileJokes(num, callback, arr = []) {
+        let url = `https://pokeapi.co/api/v2/pokemon/${Math.floor(
+          Math.random() * 100 + 1
+        )}`;
+        $.getJSON(url, (pokemon) => {
+          arr.push(pokemon.name);
+          if (num === arr.length) {
+            return callback(arr);
+          }
+          return compileJokes(num, callback, arr);
+        });
+      }
+      let myData = (data) => {
+        console.log(data);
+      };
+      document.querySelector("#button").addEventListener("click", () => {
+        compileJokes(5, myData);
+      });
+    </script>
+  </body>
+</html>

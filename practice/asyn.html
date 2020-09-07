@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="my-paragraph"></p>
+    <script>
+      function addAndThenHaveAtSomeTime(a, b, callback) {
+        setTimeout(() => {
+          let answer = a + b;
+          setTimeout(() => {
+            answer = answer / 2;
+            return callback(answer);
+          }, 3000);
+        }, 2000);
+      }
+
+      function addAndThenHaveAtSomeTime(a, b, callback) {
+        return addAtSomePoint();
+      }
+    </script>
+  </body>
+</html>
