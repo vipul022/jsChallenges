@@ -7,27 +7,51 @@
   </head>
   <body>
     <script>
+      //       This one is challenging! It will really test your understanding of functions, callbacks, and array methods.
+
+      // Take your time, and help each other. You should most-definitely reach out to others in the class for help & ideas as you'll all be hitting the same hurdles.
+
+      // Create a function called remove that will take two arguments, an array and a function.
+
+      // remove(array, callback)
+      // remove should remove all elements from array that callback function returns truthy for (and mutate the original array).
+
+      // The callback function is called removeFunction and is invoked with one argument (value):
+
+      // removerFunction(value)
+      // removerFunction should return true when the value begins with the letter 't' or the letter 'T'. Otherwise it should return false.
+
+      // Example:
+
       // let people = ["tanya", "sue", "john", "garret"];
+      // let removed = remove(people, removerFunction) ; // should remove "tanya" from people and return it in an array
+      // console.log(people);  // should log: ["sue", "john", "garret"]
+      // console.log(removed); // should log: ["tanya"]
+
       function remove(items, callback) {
-        // your code goes here
-        if (callback) {
-          let people = items.filter((word) => word === item);
-          return people;
-        }
+        // console.log(items)
+        // invoking thr callback function
+        let found = items.filter((item) => callback(item));
+        // items.filter((i) => )
+        console.log(found);
+        console.log(items);
+        // iterated through found and used splice to delete a particular item
+        found.forEach(function (item, index) {
+          items.splice(items.indexOf(item), 1);
+        });
+        return items;
       }
-      // if(callback){
-      //         return callback(answer)
-      //     }
-      //     return answer
-      // }
+
       function removerFunction(item) {
-        item = item.toLowerCase();
-        if (item.charAt(0) === "t") {
+        //    item =  item.toLowerCase();
+        if (item.charAt(0) === "t" || item.charAt(0) === "T") {
           return item;
         }
         return false;
       }
-      remove(people, removerFunction("tanya"));
+      let people = ["tanya", "sue", "john", "garret"];
+      // let people = ["cat", "dog"];
+      console.log(remove(people, removerFunction));
     </script>
   </body>
 </html>
