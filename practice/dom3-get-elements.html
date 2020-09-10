@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="myDiv">
+      <p id="myP">FlexTrack days are :</p>
+      <ul>
+        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+      </ul>
+    </div>
+    <script>
+      let p = document.getElementById("myP");
+      console.log(p);
+
+      let div = document.getElementsByClassName("myDiv");
+      console.log(div);
+
+      // querySelectorAll and getElementsByTagName
+
+      let qSAll = document.querySelectorAll("li");
+      let getElByTgNm = document.getElementsByTagName("li");
+      console.log("Before adding new elements");
+      console.log(qSAll);
+      console.log(getElByTgNm);
+
+      // change p text
+      // add new list elements to the above
+      let p1 = document.querySelector("p");
+      p1.innerHTML = "FastTrack Days are : ";
+
+      let newLi = document.createElement("li");
+      newLi.textContent = "Thursday and Friday";
+
+      document.querySelector("ul").appendChild(newLi);
+
+      console.log("After adding new elements");
+      console.log(qSAll);
+      console.log(getElByTgNm);
+
+      // converting HTML to an array
+
+      let arr = Array.from(getElByTgNm);
+      console.log(Array.isArray(arr) ? true : false);
+    </script>
+  </body>
+</html>

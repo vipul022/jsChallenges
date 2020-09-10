@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #stash-pic {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="cat-pic" src="http://placekitten.com/600/500" />
+
+    <img id="stash-pic" src="stash.png" />
+
+    <script>
+      function addStash(event) {
+        let stash = document.getElementById("stash-pic");
+        // stash.style.backgroundColor = "red";
+        console.log(event);
+        let x = event.pageX;
+        let y = event.pageY;
+        stash.style.top = `${y - 20}px`;
+        stash.style.left = `${x - 90}px`;
+      }
+
+      window.addEventListener("click", addStash);
+    </script>
+  </body>
+</html>

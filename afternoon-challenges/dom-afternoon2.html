@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="warning">Warning: My background should be red!</div>
+    <button id="makeItRed">Make It Red!</button>
+    <script>
+      let div = document.getElementById("warning");
+      let button = document.getElementById("makeItRed");
+      // div.style.color = "red";
+      button.addEventListener("click", function () {
+        if (div.style.backgroundColor == "red") {
+          div.style.backgroundColor = "white";
+        } else {
+          div.style.backgroundColor = "red";
+        }
+      });
+    </script>
+  </body>
+</html>

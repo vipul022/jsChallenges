@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let heading = document.createElement("h1");
+      // innerHTML -> remove all current children-> create new child element -> append cnew child to parent
+      // heading.innerHTML = "Awesome text";
+      let headingContent = document.createTextNode("Fun Times Ahead");
+
+      // append elements
+
+      heading.appendChild(headingContent);
+      document.body.appendChild(heading);
+      // console.log(heading.childNodes);
+
+      // remove a child
+
+      heading.removeChild(headingContent);
+      // add html in one line
+
+      heading.appendChild(document.createTextNode("Fun Times Ahead"));
+      // create new div element
+
+      let div1 = document.createElement("div");
+      document.body.appendChild(div1);
+
+      // created 2 paragraphs and appended both to div and finally appended div to body
+
+      let p1 = document.createElement("p");
+      p1.textContent = "with 'JS'";
+      let p2 = document.createElement("p");
+      p2.textContent = "with Ruby";
+
+      let div2 = document.createElement("div");
+
+      div2.appendChild(p1);
+      div2.appendChild(p2);
+      document.body.appendChild(div2);
+
+      // Nodelist querySelector querySelectorAll
+
+      let nodeListOfPs = document.querySelectorAll("p");
+      console.log(nodeListOfPs);
+
+      // nodeListOfPs can be converted into an array
+
+      let arrayOfPs = Array.from(nodeListOfPs);
+      console.log(arrayOfPs);
+    </script>
+  </body>
+</html>
