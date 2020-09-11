@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Create a webpage with an h1 of "My Book List". Add a script tag to the
+    bottom of the page, where all your JS will go. Copy this array of books: var
+    books = [ { title: 'The Design of EveryDay Things', author: 'Don Norman',
+    alreadyRead: false }, { title: 'The Most Human Human', author: 'Brian
+    Christian', alreadyRead: true } ]; Iterate through the array of books. For
+    each book, create a p element with the book title and author and append it
+    to the page. Bonuses: Use a ul and li to display the books. Add an img to
+    each book that links to a URL of the book cover. Change the style of the
+    book depending on whether you have read it or not. -->
+    <h1>My Book List</h1>
+
+    <script>
+      var books = [
+        {
+          title: "The Design of EveryDay Things",
+          author: "Don Norman",
+          alreadyRead: false,
+          url:
+            "https://images-na.ssl-images-amazon.com/images/I/410RTQezHYL._AC_SY400_.jpg",
+        },
+        {
+          title: "The Most Human Human",
+          author: "Brian Christian",
+          alreadyRead: true,
+          url:
+            "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1295465264l/8884400.jpg",
+        },
+      ];
+
+      let ul = document.createElement("ul");
+      document.body.appendChild(ul);
+
+      books.forEach((book) => {
+        let li = document.createElement("li");
+        li.textContent = `Title: ${book.title} , Author: ${book.author}`;
+
+        let img = document.createElement("img");
+        img.style.height = "300px";
+        li.style.width = "500px";
+
+        if (book.alreadyRead === true) {
+          li.style.backgroundColor = "pink";
+        } else li.style.backgroundColor = "yellow";
+
+        img.src = book.url;
+        li.appendChild(img);
+        ul.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
