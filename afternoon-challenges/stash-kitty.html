@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Event listener - Stash Kitty</title>
+    <style>
+      #stash-pic {
+        position: absolute;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Stash kitty There is a picture of a cute cat, and a moustache. Your task is
+    to implement an event listener that will put the moustache where the user
+    clicks, so you can give the cute cat a moustache. Implement the scaffolded
+    function in *script.js* to accomplish this, and use the function in an event
+    listener. Some tips: * Two event properties that will help here are *pageX*
+    and *pageY*. These return coordinates of the mouse. Use console.log to see
+    what is returned. * Two style properties you can use are *style.top* and
+    *style.left*, although you could find another way to place the moustache.
+    Note that you have to include units when you set these properties. -->
+    <img id="cat-pic" src="http://placekitten.com/600/500" />
+
+    <img id="stash-pic" src="stash.png" />
+    <script>
+      function addStash(event) {
+        let stash = document.getElementById("stash-pic");
+
+        let x = event.pageX;
+        let y = event.pageY;
+        console.log(y);
+        stash.style.left = `${x - 90}px`;
+        stash.style.top = `${y - 20}px`;
+        console.log(event);
+      }
+      document.addEventListener("click", addStash);
+    </script>
+  </body>
+</html>

@@ -22,8 +22,8 @@
         console.log(event);
         let x = event.pageX;
         let y = event.pageY;
-        stash.style.top = `${y - 20}px`;
         stash.style.left = `${x - 90}px`;
+        stash.style.top = `${y - 20}px`;
       }
 
       window.addEventListener("click", addStash);
