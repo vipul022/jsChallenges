@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Warning! In index.html, there is a div with id `warning` and a button with
+    id `makeItRed`. Your task is to make the background of the the warning div
+    red when the button is clicked. Add node to the script.js file to do this.
+    Hint: You can set style directly on a DOM node using the style property. For
+    example: ele.style.color = "blue" where ele is a node in the DOM. -->
+    <div id="warning">Warning: My background should be red!</div>
+    <button id="makeItRed">Make It Red!</button>
+
+    <script>
+      let warning = document.getElementById("warning");
+      let btn = document.getElementById("makeItRed");
+
+      btn.addEventListener("click", (event) => {
+        if (warning.style.backgroundColor == "red") {
+          warning.style.backgroundColor = "white";
+        } else warning.style.backgroundColor = "red";
+      });
+    </script>
+  </body>
+</html>
