@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // An array is positive dominant if there are more unique positive numbers than there are unique negative numbers
+      // Write a function that will return a boolean of whether or not the array is positive dominant. You can assume that all arrays will be dominant to one side.
+
+      // Examples
+
+      // let arr = [1, 1, 1, 1, -3, -6];
+      // positiveDominant(arr);
+      // => false
+      // let arr = [6, -1, -1, 34, 3];
+      // positiveDominant(arr);
+      // => true
+      function positiveDominant(array) {
+        let uniqueArr = [...new Set(array)];
+        // set is a data object which removes all the duplicate values
+        let positive = [];
+        let negative = [];
+        uniqueArr.forEach((num) =>
+          num > 0 ? positive.push(num) : negative.push(num)
+        );
+        if (positive.length > negative.length) {
+          return true;
+        } else return false;
+      }
+    </script>
+  </body>
+</html>

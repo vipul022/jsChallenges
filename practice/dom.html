@@ -47,6 +47,7 @@
         // console.log(event.target);
 
         // event.target allows us to add css properties to element itself on click
+        // console.log(event);
         event.target.style.fontSize = "30px";
 
         event.target.style.color = "red";
@@ -60,6 +61,25 @@
       // console.log(ul.innerHTML); //html inside
       // ul.innerHTML += `<li>New li element</li>`;
       // console.log(ul.innerHTML); //htm
+
+      let div = document.querySelector("div");
+      let p = div.querySelector("p");
+      let p1 = document.getElementsByTagName("p");
+      console.log(p1);
+      console.log(p);
+      div.addEventListener("click", function (event) {
+        alert("Div clicked");
+        // {
+        //   capture: true;
+        // }
+      });
+
+      // The event will always start from the inner most child and bubble up to its parents. We can stop this bubbling effect by using stopPropagation().
+
+      p.addEventListener("click", function (event) {
+        // event.stopPropagation();
+        alert("P clicked");
+      });
     </script>
   </body>
 </html>
