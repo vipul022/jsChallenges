@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbling Example</title>
+    <style>
+      #the-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        height: 50vh;
+        background-color: aqua;
+        border: 1px solid darkolivegreen;
+      }
+      #the-para {
+        font-size: 3em;
+        border: 2px solid darkolivegreen;
+        background-color: aqua;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Colour Picker</h1>
+    <div id="the-div">
+      <p id="the-para">Hello friends</p>
+    </div>
+
+    <script>
+      const thePara = document.getElementById("the-para");
+      const theDiv = document.getElementById("the-div");
+      const colours = [
+        "red",
+        "white",
+        "yellow",
+        "aqua",
+        "green",
+        "gold",
+        "silver",
+        "maroon",
+        "pink",
+      ];
+      let cIndex = 0;
+
+      // This function chooses the next colour from the array "colours"
+      function nextColour() {
+        cIndex = cIndex === colours.length - 1 ? 0 : cIndex + 1;
+        return colours[cIndex];
+      }
+      // console.log(nextColour());
+      /* Write a function "handleParaClick()" that handles a click event on the paragraph element and calls the nextColour() function to choose colors from the array. */
+      function handleParaClick(event) {
+        //YOUR CODE HERE
+        event.stopPropagation();
+        thePara.style.backgroundColor = nextColour();
+      }
+
+      /* Write a function "handleDivClick()" that handles a click event on the div element and calls the nextColour() function to choose colors from the array. */
+      function handleDivClick() {
+        //YOUR CODE HERE
+        theDiv.style.backgroundColor = nextColour();
+      }
+
+      // console.log(nextColour());
+      /* Add event listeners on paragraph element and div element 
+YOUR CODE HERE
+*/
+      thePara.addEventListener("click", handleParaClick);
+      theDiv.addEventListener("click", handleDivClick);
+    </script>
+  </body>
+</html>
