@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="pokemonImage">
+      <img
+        src=""
+        alt="The image or sprite of the Pokemon you encountered!"
+        id="imageId"
+      />
+    </div>
+    <div class="pokemonName"></div>
+    <div class="pokemonType1"></div>
+    <div class="pokemonType2"></div>
+
+    <!-- <button onclick="">Encounter a Pokemon!</button> -->
+    <button id="button">GET Pokemon</button>
+    <script>
+      function getRandomNumberForPokeAPI() {
+        // The "808" is just a safe maximum for how many Pokemon are currently in the API.
+        // When they add more Pokemon, that number should go up.
+        // Some newer Pokemon (numbers 808 and above) might be missing some data -
+        // if that's the case, just change this number back to 808 instead of 894.
+        let suitableNumber = Math.floor(Math.random() * 500);
+        return suitableNumber;
+
+        // You would then place this number in the PokeAPI url as per the API docs,
+        // using trusty ol' string interpolation.
+        // Like so:
+        // https://pokeapi.co/api/v2/pokemon/${getRandomNumberForPokeAPI()}
+      }
+
+      // Write your own JS after this line --------------------------------------
+      let getPokemon = () => {
+        fetch(
+          `https://pokeapi.co/api/v2/pokemon/${getRandomNumberForPokeAPI()}`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            let h2 = document.createElement("h2");
+
+            h2.textContent = data.forms[0].name;
+
+            console.log(h2.innerHTML);
+
+            document.querySelector(".pokemonName").appendChild(h2);
+
+            // this method can be used if image id is present
+
+            // console.log("1st method=>  ", document.getElementById("imageId"));
+            // let pokemonImg = (document.getElementById("imageId").src =
+            //   data.sprites.front_default);
+
+            // console.log(
+            //   "2nd method =>",
+            //   document
+            //     .querySelector(".pokemonImage")
+            //     .getElementsByTagName("img")
+            // );
+
+            // this method can be used if image id is not present and we have to add an image to an image tag within a div
+
+            let pokemonImg = (document
+              .querySelector(".pokemonImage")
+              .getElementsByTagName("img")[0].src = data.sprites.front_default);
+          })
+
+          .catch((err) => console.log(err));
+      };
+
+      document.getElementById("button").addEventListener("click", getPokemon);
+    </script>
+  </body>
+</html>
+<!-- let getUserName = () => { fetch("https://randomuser.me/api/") .then(response =>
+response.json()) .then(data => console.log(data.results[0].name.first))
+.catch(err => console.log(err)) }
+document.getElementById("button").addEventListener("click", getUserName) -->
+<!-- name: -->
+<!-- .then((data) => console.log(data.forms[0].name)) -->
+
+<!-- "types" -->
+<!-- .then((data) => console.log(data.types[0].type.name)) -->
+
+<!-- images -->
+
+<!-- .then((data) => console.log(data.sprites.front_default)) -->
