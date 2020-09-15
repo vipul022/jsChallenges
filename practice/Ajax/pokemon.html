@@ -49,6 +49,26 @@
 
             document.querySelector(".pokemonName").appendChild(h2);
 
+            let h4 = document.createElement("h4");
+
+            let pokemonTypes = data.types;
+            console.log(pokemonTypes);
+
+            h4.textContent = pokemonTypes[0].type.name;
+            document.querySelector(".pokemonType1").appendChild(h4);
+
+            if (pokemonTypes.length > 1) {
+              //pokemonTypes.forEach((p) => {
+              // console.log(p.type.name);
+              // if (pokemonTypes.length === 1)
+              let h4 = document.createElement("h4");
+              h4.textContent = pokemonTypes[1].type.name;
+
+              // });
+              document.querySelector(".pokemonType2").appendChild(h4);
+            }
+            //console.log(data.types[0].type.name);
+
             // this method can be used if image id is present
 
             // console.log("1st method=>  ", document.getElementById("imageId"));
